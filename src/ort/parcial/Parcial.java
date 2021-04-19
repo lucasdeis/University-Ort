@@ -3,8 +3,11 @@ package ort.parcial;
 import java.util.Scanner;
 
 public class Parcial {
+
     final static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
+
         String patente;
         String tipoVehiculo;
         int contA = 0;
@@ -16,9 +19,7 @@ public class Parcial {
         double totalRecaudado1 = 0;
         double totalAutos = 0;
         double cincuentaPorciento = 1.5;
-        int topeHora = 23;
-        int minimoHoraPica = 9;
-        int maximoHorapico = 18;
+
 
         System.out.println("Ingresa la patente del vehiculo (FIN para finalizar la carga): ");
         patente = input.nextLine();
@@ -41,8 +42,8 @@ public class Parcial {
                 System.out.println("Ingresa la hora de 0 a 23: ");
                 hora = input.nextInt();
                 input.nextLine();
-            } while (hora > topeHora);
-            if (hora >= minimoHoraPica && hora <= maximoHorapico)
+            } while (hora > 23);
+            if (hora >= 9 && hora <= 18)
                 peaje = peaje * cincuentaPorciento;
             totalRecaudado1 = totalRecaudado1 + peaje;
             totalAutos = (double) contA * 100 / (contC + contM + contA);
