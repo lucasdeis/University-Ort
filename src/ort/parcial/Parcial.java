@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Parcial {
 
     final static Scanner input = new Scanner(System.in);
-
     public static void main(String[] args) {
 
         String patente;
@@ -19,7 +18,9 @@ public class Parcial {
         double totalRecaudado1 = 0;
         double totalAutos = 0;
         double cincuentaPorciento = 1.5;
-
+        int horaTopeMaxima = 23;
+        int horaPeajeMinima = 9;
+        int horaPeajeMaxima = 18;
 
         System.out.println("Ingresa la patente del vehiculo (FIN para finalizar la carga): ");
         patente = input.nextLine();
@@ -42,8 +43,8 @@ public class Parcial {
                 System.out.println("Ingresa la hora de 0 a 23: ");
                 hora = input.nextInt();
                 input.nextLine();
-            } while (hora > 23);
-            if (hora >= 9 && hora <= 18)
+            } while (hora > horaTopeMaxima);
+            if (hora >= horaPeajeMinima && hora <= horaPeajeMaxima)
                 peaje = peaje * cincuentaPorciento;
             totalRecaudado1 = totalRecaudado1 + peaje;
             totalAutos = (double) contA * 100 / (contC + contM + contA);
